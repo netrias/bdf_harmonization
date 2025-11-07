@@ -1,0 +1,13 @@
+name: ValidateMetadata
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    validate-all-performer-tools:
+        uses: ARPA-H-BDF/bdfkb-schema/.github/workflows/ci-validate.yaml@main
+        with:
+            python-version: '3.1.1'

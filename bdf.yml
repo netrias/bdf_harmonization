@@ -1,0 +1,81 @@
+
+version: 0.0.1
+
+tool:
+  name: AI Assisted Curation
+  repo_url: https://github.com/netrias/bdf_harmonization
+  tool_homepage: https://github.com/netrias/bdf_harmonization
+  documentation_url: https://github.com/netrias/bdf_harmonization
+  tool_type: DesktopApp
+  tool_notes: Also offers API
+
+llm:
+  usesLlm: true
+  modelsSupported:
+    - gpt2
+  modelsRequired:
+    - gpt2
+  bringOwnKey: false
+
+input:
+  - name: clinical/phenotype structured 1
+    dataCategory: clinical-phenotype
+    dataClass: structured
+    dataType: pre-clinical metadata
+    format:
+      - csv
+      - xlsx
+      - various
+    dataStandard:
+      - Standard agnostic
+    proprietary: false
+    source: 
+
+output:
+  - name: clinical/phenotype structured 1
+    dataCategory: clinical-phenotype
+    dataClass: structured
+    dataType: Harmonized metadata
+    format:
+      - csv
+      - xlsx
+      - various
+    dataStandard:
+      - Standard agnostic
+    proprietary: false
+    source: 
+
+license:
+  license_type: Apache-2.0
+  link: https://www.apache.org/licenses/LICENSE-2.0
+
+funding:
+  source: Cancer Institute - NIH
+  agreement: "This project has been funded in whole or in part with Federal funds from the National Cancer Institute, National Institutes of Health, under Prime Contract No. 75N91019D00024, Task Order No. TBD or HHSN261201500003I, Task Order No. TBD. The content of this publication does not necessarily reflect the views or policies of the Department of Health and Human Services, nor does mention of trade names, commercial products or organizations imply endorsement by the U.S. Government."
+  link: 
+
+domains:
+  - Cancer CDEs
+  - Medical User Questionnaires
+
+credit:
+  - name: Netrias
+    role: Developer
+    org: Netrias, LLC
+    url: https://www.netrias.com/
+
+target_users:
+  primary_user:
+    user_type: researcher
+    technical_literacy_level:
+      - intermediate
+    biomedical_literacy_level:
+      - intermediate
+    
+maturity:
+  beginning_maturity: 1
+  current_maturity: 4
+
+media: []
+
+collaborations: []
