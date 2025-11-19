@@ -1,10 +1,19 @@
 name: ValidateMetadata
 
+permissions:
+  contents: read
+
 on:
     push:
         branches: [main]
+        paths:
+          - 'bdf.yml'
+          - '.github/workflows/validate_metadata.yml'
     pull_request:
         branches: [main]
+        paths:
+          - 'bdf.yml'
+          - '.github/workflows/validate_metadata.yml'
 
 jobs:
     validate-all-performer-tools:
