@@ -6,15 +6,28 @@
 
 <div align="center">
 
-# Netrias Harmonization API & Tooling
+# Netrias Metadata Harmonization Tooling
 
-> **Turn messy biomedical metadata into clean, standards‑compliant records in just a few lines of code.**
+> **Turn messy biomedical metadata into clean, standards‑compliant records in just a few clicks.**
 
-![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Python 3.13+](https://img.shields.io/badge/python-3.13%2B-blue) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 </div>
 
-The Netrias Harmonization platform provides REST endpoints, a Python CLI, and a prototype user interface for:
+## 📢 Latest Updates
+
+### Feb 18, 2026
+
+The Netrias Harmonization platform has undergone a significant update. As of Feb 2026, we’re doing the first of several releases:
+
+- **UI upgrade:** Our UI harmonization tool has been significantly upgraded and is now called **Data Chord** (🎶 it harmonizes your data 🎶).
+- **Python client:** Major improvements are underway, with a release planned for **March 2026**.
+- **API updates:** We’ve made major updates to the underlying API. As a result, API access is **restricted for now**, since most users will find the Python client easier to use.
+  - If you need API access, please reach out using the contact information on the **[API key request page](docs/requesting-API-key.md)**.
+
+
+## ℹ️ About 
+The Netrias Harmonization platform provides a user interface (Data Chord), a Python client, and REST endpoints for:
 
 * **CDE discovery** – automatically find the best Common Data Element (CDE) for an arbitrary table column.
 * **Value harmonization** – map free‑text cell values to controlled vocabularies.
@@ -24,55 +37,42 @@ The Netrias Harmonization platform provides REST endpoints, a Python CLI, and a 
 
 ## 📚 Documentation Tour
 
-Follow this sequence for a smooth on‑boarding. Each step links to a dedicated page with examples and API snippets.
+Follow this sequence for a smooth on‑boarding. Each step links to a dedicated page with more inforamtion and examples.
 
-| Step | Topic                     | File                                                                               | Why read it first?                                              |
-| :--: | ------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Step | Topic                     | File                                                                                    | Why read it first?                                              |
+| :--: | ------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 |   1  | **What We Harmonize**     | [`what-we-harmonize.md`](docs/what-we-harmonize.md)                                     | Learn the core concepts & data models (CDEs + Schemas).         |
-|   2  | **Request an API Key**    | [`requesting-API-key.md`](docs/requesting-API-key.md)                                   | Get your credentials to call the service.                       |
-|   3  | **Install the CLI Tool**       | [`apiclient.md`](docs/apiclient.md)                                                     | Quick local setup for scripting & command‑line experimentation. |
-|   4  | **Install the UI Tool**       | [`data-chord.md`](docs/data-chord.md)                                                     | No-code user interface for guided harmoization. |
-|   5  | **CDE Recommendation** | [`cde-recommendation.md`](docs/cde-recommendation.md)                                   | Discover which CDEs match your columns.                  |
-|   6  | **Value Harmonization**   | [`harmonize.md`](docs/harmonize.md)                                                     | Convert raw values into permissible values.                      |
-|   7  | **Advanced Pipeline**     | [`example-use-cases.md`](docs/example-use-cases.md)                                     | Automate steps 4‑5 end‑to‑end on a whole table.                 |
-|   8  | **Swagger / OpenAPI**     | [https://apiserver.netriasbdf.cloud/docs](https://apiserver.netriasbdf.cloud/docs) | Interactive playground & full endpoint reference.               |
-|   9  | **Submit Your Own CDEs**  | [`requesting-data-be-added.md`](docs/requesting-data-be-added.md)                       | How to get your custom data loaded into the platform.        |
-
-> **Tip:** Bookmark the Swagger docs - they’re always up to date with the latest versions and error codes.
-
+|   2  | **Request an API Key**    | [`requesting-API-key.md`](docs/requesting-API-key.md)                                   | Get your credentials to use the tooling .                       |
+|   3  | **Install Data Chord**    | [Data Chord Github Page](https://github.com/netrias/data_chord)                         | No-code user interface for guided harmoization.                 |
+|   4  | **Install the Python Client**    | *Coming March 2026*                                                              | Advanced usage to build end-to-end harmonization pipelines.     |
+|   5  | **Submit Your Own CDEs**  | [`requesting-data-be-added.md`](docs/requesting-data-be-added.md)                       | How to get your custom data loaded into the platform.           |
 ---
 
-## 🚀 No Code Quick Start
+## 🚀 No Code Getting Started Steps
 
-### 1 · Install the Python client
+### 1 · Request an API key
 
-```bash
-pip install git+https://github.com/netrias/bdf_harmonization
-```
+See [`requesting-API-key.md`](requesting-API-key.md) and email the necessary info to us. Store the key in a password manager or other secure location.
 
-### 2 · Request an API key
+### 2 · Install Data Chord
 
-See [`requesting-API-key.md`](requesting-API-key.md) and email the necessary info to us. Store the key and URL in an environment variable:
+Visit the [Data Chord Github Repo](https://github.com/netrias/data_chord) and follow the First-Time Setup instructions.
 
-```bash
-export NETRIAS_API_KEY="<YOUR_KEY>"
-export HARMONIZATION_API_URL="https://apiserver.netriasbdf.cloud/v1/harmonize"
-```
+### 3 · Open Data Chord in your browser
 
-### 3 · Harmonize a value in one command
+After you've run the application just open http://localhost:8000 in your browser and you should see the Data Chord upload screen.
 
-```bash
-apc harmonize 1006 "nf" | jq .
-```
+### 4 · Upload your first CSV file
 
-*(Maps the string “nf” against the **diagnosis** CDE in Sage Bionetworks' Neurofibromatosis (NF) data model and prints the ranked options.)*
+Data Chord currently only supports CSV files so any spreadhseets will need to be converted to that format. 
 
-## 🛣️ Roadmap
+### 5 · Follow the guided harmonization workflow
 
-* 🔍 **/mapping** endpoints for programmatic CDE‑ID lookup.
-* 🔄 **Versioned CDE support** - store multiple historical CDE releases and let clients specify which version to harmonize against.
-* 🗂️ **Bulk upload** of TSV/CSV/Excel files.
+We've designed Data Chord to guide the user through haromnizing the columns of intereste in their uploaded spreadsheet.
 
+## 🤔 Questions or Suggestions
+
+We encourage users to open github issues in this repo https://github.com/netrias/bdf_harmonization/issues with any questions, bugs, or feature requests they may have. Our goal is to work closely with users and build tooling that helps them harmonize metadata faster, more efficiently, and more accurately.
 
 ---
 

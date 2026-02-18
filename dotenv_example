@@ -1,2 +1,0 @@
-HARMONIZATION_API_KEY='bunch_of_api_key_characters' # contact Netrias for an API Key
-HARMONIZATION_API_URL="https://apiserver.netriasbdf.cloud/v1/harmonize"

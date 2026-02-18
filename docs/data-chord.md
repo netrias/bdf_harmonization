@@ -1,72 +1,108 @@
-# 
+# Data Chord
 
+Data harmonization workflow application. Upload tabular data, review AI-suggested column mappings, run harmonization, and approve results before export.
 
-# Data Chord UI – Guided Harmonization Workflow
+For a comprehensive overview of what Data Chord does and why, see [app.md](app.md).
 
-> **Turn spreadsheets into standardized metadata without writing code.**
+## First-Time Setup
 
-|                    |                                                                                             |
-| ------------------ | ------------------------------------------------------------------------------------------- |
-| **Container**      | [`charmannetrias/data_chord:version_1`](https://hub.docker.com/r/charmannetrias/data_chord) |
-| **Endpoints used** | `/cde-recommendation`, `/harmonize`                                                         |
-| **Audience**       | Analysts, biologists, or anyone who prefers a point‑and‑click interface over API calls.     |
+### 1. Install uv (Python package manager)
 
----
+Data Chord uses [uv](https://docs.astral.sh/uv/) to manage Python and dependencies. You don't need to install Python separately — uv handles that automatically. See the [uv installation docs](https://docs.astral.sh/uv/getting-started/installation/) for other install methods or troubleshooting.
 
-## Quick Start (Docker)
-
+**macOS / Linux:**
 ```bash
-# 1 • Pull the image
-docker pull charmannetrias/data_chord:version_1
-
-# 2 • Run the container (replace the key!)
-docker run \
-  -e HARMONIZATION_APP_KEY="<YOUR_API_KEY>" \
-  -p 8080:8080 \
-  charmannetrias/data_chord:version_1
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-*Navigate to* **`http://localhost:8080`** in your browser.
-> **Note:** You will need docker installed.
+**Windows (PowerShell):**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
 
-### Environment Variables
+After installing, **close and reopen your terminal** so the `uv` command is available.
 
-| Variable                | Required | Description                                             |
-| ----------------------- | -------- | ------------------------------------------------------- |
-| `HARMONIZATION_APP_KEY` | ✅        | Your Netrias API key (same header used for REST calls). |
-| `PORT`                  | ❌        | Override the default `8080` port if needed.             |
+Verify it works:
+```bash
+uv --version
+```
 
----
+### 2. Clone the repository
 
-## Guided Workflow
+```bash
+git clone https://github.com/netrias/data_chord.git
+cd data_chord
+```
 
-1. **Upload file** – Select a CSV or Excel file.<br>*(Max 25 MB; UTF‑8 recommended)*
-3. **Column‑to‑Model mapping** – For the selected column you’ll see the top CDE suggestions. Accept the suggestion or override.
-4. **Value harmonization** – Click *“Harmonize”* and the UI batch‑calls **`/harmonize`** for every non‑null cell for the selected column.
-5. **Review & export** – Preview differences (original vs. AI-harmonized) then download as CSV with or without the harmonization metadata.
+### 3. Install dependencies
 
----
+```bash
+uv sync
+```
 
-## Authentication
+This automatically downloads the correct Python version (3.13+) and installs all project dependencies into an isolated virtual environment. Nothing is installed globally on your system.
 
-* The UI forwards your **`HARMONIZATION_APP_KEY`** to the API - no keys are stored server‑side.
+### 4. Configure environment variables
 
----
+```bash
+cp .env.example .env
+```
 
-## Roadmap
+Open `.env` in a text editor and replace `your_api_key_here` with your Netrias API key (contact Netrias for access).
 
-* **Whole‑spreadsheet harmonization** – process entire CSV/Excel files in one click
-* **Workflow refinements** driven by user feedback
-* **Alternative distribution** – investigate a hosted web‑app version
+### 5. Run the application
 
----
+```bash
+uv run uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
+```
 
-## License & Support
+Open http://localhost:8000 in your browser. You should see the Data Chord upload screen.
 
-The Data Chord UI is released under Apache 2.0. For bug reports or feature requests, open an issue.
+## Environment Variables
 
-### Changelog
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `NETRIAS_API_KEY` | Yes | API key for Netrias harmonization, CDE discovery, and Data Model Store |
 
-* 2025‑07‑22 – Added initial draft.
+## Docker
 
+```bash
+# Build
+docker build -t data-chord .
 
+# Run
+docker run -p 8000:8000 --env-file .env data-chord
+```
+
+## Development
+
+If you have [just](https://github.com/casey/just) installed, run `just --list` for available shortcuts:
+
+```bash
+just sync        # Install with dev dependencies
+just app-reload  # Run with auto-reload
+just test        # Run tests
+just lint        # Lint
+just typecheck   # Type check
+```
+
+Or use the underlying commands directly:
+
+```bash
+uv sync --extra dev
+uv run pytest
+uv run ruff check src backend tests
+uv run basedpyright
+```
+
+## Workflow Stages
+
+1. **Upload** - Upload CSV file and analyze columns
+2. **Review Columns** - Review/override AI-suggested column-to-model mappings
+3. **Harmonize** - Execute harmonization pipeline
+4. **Review Results** - Inspect and approve harmonized values
+5. **Review Summary** - Review change statistics and download harmonized dataset
+
+## CDE Endpoint Configuration
+
+Data Chord uses [netrias-client](https://github.com/netrias/netrias_client) for CDE discovery and harmonization. See [ADR 005](adr/ADR_005_cde_lambda_migration.md) for migration details and rollback procedure.
