@@ -60,49 +60,37 @@ Key attributes of a schema:
 
 ---
 
-### Core Endpoints
-
-| Task                           | Endpoint              | Purpose                                                                                              |
-| ------------------------------ | --------------------- | ---------------------------------------------------------------------------------------------------- |
-| **Standardize a single value** | [`/harmonize`](harmonize.md)          | Maps one free‑text string to the best‑matching permissible value of a chosen CDE.                    |
-| **Discover the right CDE(s)**     | [`/cde-recommendation`](cde-recommendation.md) | Analyses a table (one or more column headers + values) and suggests the most likely CDE targets for each column. |
-
-> (See dedicated documentation for each endpoint for full request/response details and code snippets.)
-
 ### Schemas Currently Deployed
 
-| Schema                     | Version  | CDE Count | Source           |
+Data Chord currently makes the following schemas available:
+> **Note:** We use the term "Data Model" and "Schema" interchangably
+
+<img src="images/data_chord_current_schemas.png" alt="Data Chord: Current Schemas" width="30%">
+
+
+The following table provides more details on the Schemas (Data Models) available through Data Chord
+
+| Schema/Data Model          | Version  | CDE Count | Source           |
 | -------------------------- | -------- | --------- | ---------------- |
-| General Commons (GC)       | 6.0.4    | 245       | NCI              |
-| Cancer Data Services (CDS) | 5.0.2    | 250       | NCI              |
-| NF‑OSI RNA‑Seq             | *latest* | 69        | Sage Bionetworks |
-| NF‑OSI Imaging Assay       | *latest* | 40        | Sage Bionetworks |
-| NF‑OSI Clinical Assay      | *latest* | 43        | Sage Bionetworks |
-| NF‑OSI ChIP‑Seq            | *latest* | 64        | Sage Bionetworks |
+| GC Schema                  | 1        | 245       | NCI General Commons [https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml](https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml) |
+| CCDI Data Model            | 1        | 270       | NCI Childhood Cancer Data Initiative [https://github.com/CBIIT/ccdi-model/blob/main/model-desc/ccdi-model-props.yml](https://github.com/CBIIT/ccdi-model/blob/main/model-desc/ccdi-model-props.yml)   |
+| Synapse Schema             | 1        | 299       | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
+| NF‑OSI RNA‑Seq             | 1        | 69        | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
+| NF‑OSI Imaging Assay       | 1        | 40        | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
+| NF‑OSI Clinical Assay      | 1        | 43        | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
+| NF‑OSI ChIP‑Seq            | 1        | 64        | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
 
-For the raw schema source files, refer to:
 
-* **GC and CDS data model:** [https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml](https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml)
-* **NF‑OSI schemas:** [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary)
 
 ### Choosing the Right Schema or CDE
 
-1. **Know your target CDE:** Use **/harmonize** to convert free‑text values to valid permissible values.
-2. **Unsure which CDE applies:** Use **/cde-recommendation** to get ranked suggestions based on sample column data.
 
-> For examples on how use the endponits seperately and together for various use cases please see the [use case documenation](example-use-cases.md).
 
 ### Loading Additional Schemas
 
 Our platform is data model agnostic and can ingest virtually any well‑structured CDE collection. To request an import of your own CDEs and schema please reivew the [submission checklist and instructions](requesting-data-be-added.md).
 
-### Quick Links
-
-* Harmonize endpoint docs → [harmonize.md](harmonize.md)
-* CDE Recommendation endpoint docs → [cde-recommendation.md](cde-recommendation.md)
-* Example use‑case notebooks → [example-use-cases.md](example-use-cases.md)
-* Data‑loading request guide → [requesting-data-be-added.md](requesting-data-be-added.md)
 
 ### Changelog
-
+* 2026-02-18 - Updated to descibe Schemas/Data Models available in Data Chord
 * 2025‑07‑08 – Initial draft of CDE and Schema overview
