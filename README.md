@@ -70,6 +70,8 @@ Data Chord currently only supports CSV files so any spreadhseets will need to be
 
 We've designed Data Chord to guide the user through haromnizing the columns of intereste in their uploaded spreadsheet.
 
+---
+
 ## 🤔 Questions or Suggestions
 
 We encourage users to open github issues in this repo https://github.com/netrias/bdf_harmonization/issues with any questions, bugs, or feature requests they may have. Our goal is to work closely with users and build tooling that helps them harmonize metadata faster, more efficiently, and more accurately.
