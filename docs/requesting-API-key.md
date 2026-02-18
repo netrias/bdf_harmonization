@@ -1,8 +1,13 @@
 # API Key Provisioning Guide
 
+## 📢 Annoucements
+### Feb 18, 2026
+
+- Due to the major updates of the system we have deprecated all API keys provisioned prior to Feb 18, 2026 and ask that users reach out to us to acquire a new key.
+
 ## Overview
 
-All requests to the **Harmonize** and **CDE Recommendation** endpoints require an `x-api-key` header. Developers must obtain this key from Netrias before integrating our services into client applications or workflows.
+In order to use any part of the systems (Data Chord, Python Clien, or API) users must obtain an API key from Netrias. This is to safeguard against abuse or unintended acess.
 
 ## Who Can Request a Key?
 
@@ -18,8 +23,8 @@ All requests to the **Harmonize** and **CDE Recommendation** endpoints require a
    | ---------------------------------- | ------------------------------------------------------------------------- |
    | **Name**                           | Identify the responsible individual.                                      |
    | **Organization / Team**            | Helps us assign the correct quota.                                        |
-   | **Intended use‑case**              | Brief description (e.g., “Prototype UI for clinical data harmonization”). |
-   | **Estimated call volume**          | Requests per day (rough order‑of‑magnitude).                              |
+   | **Intended use‑case**              | Brief description (e.g., “Testing Data Chord on XYZ Data”).               |
+   | **Estimated data volume**          | e.g., 50 CSV files with 3K rows each                                      |
 
 2. **Submit your request** – Email the above details to **Netrias** at **[bdf_strides@netrias.com](mailto:bdf_strides@netrias.com)** with subject line **“API Key Request – Netrias BDF”**.
 
@@ -31,10 +36,7 @@ All requests to the **Harmonize** and **CDE Recommendation** endpoints require a
 4. **Store the key securely**
 
    * **Never** commit keys to source control.
-   * Prefer environment variables or AWS Secrets Manager.
    * Rotate immediately if you suspect compromise.
-
-5. **Start integrating** – Pass the key in the `x-api-key` header for every request.
 
 ## Key Lifecycle Management
 
@@ -43,12 +45,6 @@ All requests to the **Harmonize** and **CDE Recommendation** endpoints require a
 | **Rotate / Revoke**   | Email [bdf_strides@netrias.com](mailto:bdf_strides@netrias.com)   | 4 business hours                      |
 | **Report compromise** | Same as above                                           | Immediate – key disabled upon receipt |
 
-## Error Codes Related to API Keys
-
-| HTTP status             | Meaning                 | Recommended Fix                                         |
-| ----------------------- | ----------------------- | ------------------------------------------------------- |
-| `401 Unauthorized`      | Missing or invalid key. | Ensure the header is set and copy is correct.           |
-
 ## Changelog
-
+* 2026-02-18 - Updated with deprecation anoucement.
 * 2025‑07‑08 – Initial draft of API Key Provisioning Guide.
