@@ -29,7 +29,7 @@ The Netrias Harmonization platform has undergone a significant update. As of Feb
 ## ℹ️ About 
 The Netrias Harmonization platform provides a user interface (Data Chord), a Python client, and REST endpoints for:
 
-* **CDE discovery** – automatically get recommendations for which Common Data Element (CDE) should apply to each column in your dataset* 
+* **CDE discovery** – automatically get recommendations for which Common Data Element (CDE) should apply to each column in your dataset. 
 * **Value harmonization** – map free‑text cell values to controlled vocabularies.
 * **End‑to‑end pipelines** – batch conform entire spreadsheets into standards conformance.
 
