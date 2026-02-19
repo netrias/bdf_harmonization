@@ -86,7 +86,7 @@ To keep the recommendation experience fast and reliable in early releases, the s
 - `primary_site` (246)
 - `role_or_affiliation` (140)
 
-**Synapse (`synapse`) — not recommended:**
+**Synapse (`synapse`) — not recommended: (manual selection required)**
 - `Institution` (325)
 - `Assay` (186)
 - `ProtocolAssay` (186)
@@ -94,21 +94,21 @@ To keep the recommendation experience fast and reliable in early releases, the s
 - `FileFormat` (114)
 - `Platform` (113)
 
-**Synapse ChIP-Seq Template (`sage_chipseq_template`) — not recommended:**
+**Synapse ChIP-Seq Template (`sage_chipseq_template`) — not recommended: (manual selection required)**
 - `assay` (188)
 - `fileFormat` (114)
 - `platform` (114)
 
-**Synapse Clinical Assay Template (`sage_clinical_assay_template`) — not recommended:**
+**Synapse Clinical Assay Template (`sage_clinical_assay_template`) — not recommended: (manual selection required)**
 - `assay` (188)
 - `fileFormat` (114)
 
-**Synapse Imaging Assay Template (`sage_imaging_assay_template`) — not recommended:**
+**Synapse Imaging Assay Template (`sage_imaging_assay_template`) — not recommended: (manual selection required)**
 - `assay` (188)
 - `fileFormat` (114)
 - `platform` (114)
 
-**Childhood Cancer Data Initiative (`ccdi`) — not recommended:**
+**Childhood Cancer Data Initiative (`ccdi`) — not recommended: (manual selection required)**
 - `treatment_agent` (4477)
 - `laboratory_test_name` (1055)
 - `adverse_event` (790)
