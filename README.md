@@ -42,7 +42,7 @@ Follow this sequence for a smooth on‑boarding. Each step links to a dedicated 
 | Step | Topic                     | File                                                                                    | Why read it first?                                              |
 | :--: | ------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 |   1  | **What We Harmonize**     | [`what-we-harmonize.md`](docs/what-we-harmonize.md)                                     | Learn the core concepts & data models (CDEs + Schemas).         |
-|   2  | **Request an API Key**    | [`requesting-API-key.md`](docs/requesting-API-key.md)                                   | Get your credentials to use the tooling .                       |
+|   2  | **Request an API Key**    | [`requesting-API-key.md`](docs/requesting-API-key.md)                                   | Get your credentials to use the tooling.                       |
 |   3  | **Install Data Chord**    | [Data Chord Github Page](https://github.com/netrias/data_chord/tree/v1.0.0?tab=readme-ov-file#data-chord)                         | No-code user interface for guided harmonization.                 |
 |   4  | **Install the Python Client**    | *Coming March 2026*                                                              | Advanced usage to build end-to-end harmonization pipelines.     |
 |   5  | **Submit Your Own CDEs**  | [`requesting-data-be-added.md`](docs/requesting-data-be-added.md)                       | How to get your custom data loaded into the platform.           |
