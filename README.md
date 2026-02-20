@@ -64,7 +64,7 @@ After you've run the application just open http://localhost:8000 in your browser
 
 ### 4 · Upload your first CSV file
 
-Data Chord currently only supports CSV files so any spread will need to be converted to that format. 
+Data Chord currently only supports CSV files so any spreadsheet will need to be converted to that format. 
 
 ### 5 · Follow the guided harmonization workflow
 
