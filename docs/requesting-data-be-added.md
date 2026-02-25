@@ -2,12 +2,12 @@
 
 ## Overview
 
-The Netrias Harmonization platform is intentionally **data model agnostic**. If you maintain a data model built around [Common Data Elements](what-we-harmonize.md) (CDEs) or something fairly similar and would like it available as a first‑class *target schema* inside our API, we’re happy to ingest it.
+The Netrias Harmonization platform is intentionally **data model agnostic**. If you maintain a data model built around [Common Data Elements](what-we-harmonize.md) (CDEs) or something fairly similar and would like it available as a first‑class *target schema* inside our system, we’re happy to ingest it.
 
 Adding a schema means that:
 
-* `/cde-recommendation` can suggest your CDEs when users present matching columns.
-* `/harmonize` can map free‑text values to the permissible values you define.
+* You can suggest your CDEs when users present matching columns.
+* can map free‑text values to the permissible values you define.
 
 Just follow the request process below to get things started.
 

@@ -60,7 +60,7 @@ Key attributes of a schema:
 
 ---
 
-### Schemas Currently Deployed
+### Schemas Currently Available
 
 Data Chord currently makes the following schemas available:
 > **Note:** We use the term "Data Model" and "Schema" interchangably
@@ -68,23 +68,18 @@ Data Chord currently makes the following schemas available:
 <img src="images/data_chord_current_schemas.png" alt="Data Chord: Current Schemas" width="30%">
 
 
-The following table provides more details on the Schemas (Data Models) available through Data Chord
+#### The following table provides more details on the Schemas (Data Models) available through Data Chord
 
-| Schema/Data Model          | Version  | CDE Count | Source           |
-| -------------------------- | -------- | --------- | ---------------- |
-| GC Schema                  | 1        | 245       | NCI General Commons [https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml](https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml) |
-| CCDI Data Model            | 1        | 270       | NCI Childhood Cancer Data Initiative [https://github.com/CBIIT/ccdi-model/blob/main/model-desc/ccdi-model-props.yml](https://github.com/CBIIT/ccdi-model/blob/main/model-desc/ccdi-model-props.yml)   |
-| Synapse Schema             | 1        | 299       | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
-| NF‑OSI RNA‑Seq             | 1        | 69        | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
-| NF‑OSI Imaging Assay       | 1        | 40        | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
-| NF‑OSI Clinical Assay      | 1        | 43        | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
-| NF‑OSI ChIP‑Seq            | 1        | 64        | Sage Bionetworks [https://github.com/nf-osi/nf-metadata-dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
-
-
-
-### Choosing the Right Schema or CDE
-
-
+| Schema/Data Model | Version | CDE Count | Upstream model version / date | Source |
+| ----------------- | ------: | --------: | ----------------------------- | ------ |
+| GC Schema         | 1       | 245       | CDS model **v6.0.4** (~Apr 8, 2025) | NCI General Commons https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml |
+| GC Schema         | 2       | 245       | CDS model (Jan 29, 2026)      | NCI General Commons https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml |
+| CCDI Data Model   | 1       | 270       | —                             | NCI Childhood Cancer Data Initiative https://github.com/CBIIT/ccdi-model/blob/main/model-desc/ccdi-model-props.yml |
+| Synapse Schema    | 1       | 299       | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
+| NF-OSI RNA-Seq    | 1       | 69        | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
+| NF-OSI Imaging Assay | 1    | 40        | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
+| NF-OSI Clinical Assay | 1   | 43        | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
+| NF-OSI ChIP-Seq   | 1       | 64        | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
 
 ### Loading Additional Schemas
 
