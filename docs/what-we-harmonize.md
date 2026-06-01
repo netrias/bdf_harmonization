@@ -1,12 +1,13 @@
-# Common Data Element and Schemas Overview
+# Common Data Elements and Data Models Overview
 
-### What is a Common Data Element?
-A **Common Data Element (CDE)** is a standardized, semantically defined data field - think of it as a spreadsheet column header whose meaning is precisely described. CDEs come in two varieties:
+## What is a Common Data Element?
 
-1. **With a controlled vocabulary** – also called *permissible values or standards*; only those values are considered valid.
-2. **Without a controlled vocabulary** – any free‑text (or numeric) value is acceptable, though structure or validation rules may still apply.
+A **Common Data Element (CDE)** is a standardized, semantically defined data field. Think of it as a spreadsheet column header whose meaning is precisely described. CDEs come in two varieties:
 
-#### Example – CDE *with* permissible values
+1. **With a controlled vocabulary** – also called *permissible values* or *standards*; only those values are considered valid.
+2. **Without a controlled vocabulary** – any free-text or numeric value is acceptable, though structure or validation rules may still apply.
+
+### Example – CDE with permissible values
 
 ```jsonc
 {
@@ -28,7 +29,7 @@ A **Common Data Element (CDE)** is a standardized, semantically defined data fie
 }
 ```
 
-#### Example – CDE *without* permissible values
+### Example – CDE without permissible values
 
 ```jsonc
 {
@@ -39,53 +40,83 @@ A **Common Data Element (CDE)** is a standardized, semantically defined data fie
 }
 ```
 
-> **Analogy:** Treat the CDE (`embedding_medium`) as the column header and its permissible values (e.g., `Carbowax`, `Agar embedding`) as the valid entries in the rows beneath. For a CDE like `participant_id`, the rows can contain any value the data creator provides.
+> **Analogy:** Treat the CDE (`embedding_medium`) as the column header and its permissible values (for example, `Carbowax` or `Agar embedding`) as the valid entries in the rows beneath it. For a CDE like `participant_id`, the rows can contain any value the data creator provides.
 
-### What is a Schema?
+## What is a Data Model?
 
-A **schema** is an *ordered collection of CDEs* that work together to describe a particular data‑capture scenario, assay, or clinical study domain.
-Think of a schema as the **template for a table**: each CDE defines one column, and the schema specifies which columns belong together, their order, validation rules, and version.
+A **data model** is an ordered collection of CDEs that work together to describe a particular data-capture scenario, assay, clinical study domain, or metadata submission workflow.
 
-Key attributes of a schema:
+Think of a data model as the **template for a table or collection of tables**: each CDE defines a field, and the data model specifies which fields belong together, their meaning, their version, and whether any fields have controlled vocabularies.
 
-| Attribute       | Description                                                                                                   |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Scope**       | The scientific or operational context it covers (e.g., RNA‑Seq metadata, clinical encounters).                |
-| **CDE set**     | The complete list of CDEs — including those that reference controlled vocabularies and those that do not.       |
-| **Version**     | Semantic version (e.g., `6.0.4`) that signals when CDE definitions or permissible values change.              |
-| **Source**      | The authority that curates the schema (NCI, Sage Bionetworks, etc.).                                          |
-| **Inheritance** | Schemas can extend or subset larger data models, inheriting parent CDEs but tailoring to a narrower use‑case. |
+Key attributes of a data model:
 
-> **Analogy:** If a CDE is a column header, a *schema* is the entire spreadsheet template - laying out every column, its order, and the allowed values. Versioning guarantees that your data aligns with the same template your collaborators expect.
+| Attribute       | Description                                                                                             |
+| --------------- | ------------------------------------------------------------------------------------------------------- |
+| **Scope**       | The scientific or operational context it covers, such as RNA-Seq metadata or clinical encounters.       |
+| **CDE set**     | The complete list of CDEs, including those that reference controlled vocabularies and those that do not. |
+| **Version**     | A version identifier, such as `11.0.4`, that signals when CDE definitions or permissible values change. |
+| **Source**      | The authority that curates the data model, such as NCI or Sage Bionetworks.                             |
+| **Structure**   | How the CDEs are organized for data entry, validation, and harmonization.                               |
+
+> **Analogy:** If a CDE is a column header, a *data model* is the full spreadsheet template, laying out every column, its meaning, and the allowed values. Versioning helps ensure that your data aligns with the same template your collaborators expect.
 
 ---
 
-### Schemas Currently Available
+## Data Models Currently Available
 
-Data Chord currently makes the following schemas available:
-> **Note:** We use the term "Data Model" and "Schema" interchangably
+Data Chord currently makes the following data models available through the hosted early-access web application:
 
-<img src="images/data_chord_current_schemas.png" alt="Data Chord: Current Schemas" width="30%">
+<p align="center">
+  <img src="images/data_chord_current_data_models.png" alt="Data Chord data model selector" width="55%">
+</p>
 
+> **Terminology note:** This documentation uses **data model** as the generic term. Some official Data Chord data model names still include the word “Schema” because that is part of the displayed name used by the upstream community or integration.
 
-#### The following table provides more details on the Schemas (Data Models) available through Data Chord
+### General Commons versions
 
-| Schema/Data Model | Version | CDE Count | Upstream model version / date | Source |
-| ----------------- | ------: | --------: | ----------------------------- | ------ |
-| GC Schema         | 1       | 245       | CDS model **v6.0.4** (~Apr 8, 2025) | NCI General Commons https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml |
-| GC Schema         | 2       | 245       | CDS model (Jan 29, 2026)      | NCI General Commons https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml |
-| CCDI Data Model   | 1       | 270       | —                             | NCI Childhood Cancer Data Initiative https://github.com/CBIIT/ccdi-model/blob/main/model-desc/ccdi-model-props.yml |
-| Synapse Schema    | 1       | 299       | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
-| NF-OSI RNA-Seq    | 1       | 69        | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
-| NF-OSI Imaging Assay | 1    | 40        | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
-| NF-OSI Clinical Assay | 1   | 43        | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
-| NF-OSI ChIP-Seq   | 1       | 64        | —                             | Sage Bionetworks https://github.com/nf-osi/nf-metadata-dictionary |
+The **General Commons Data Model** currently includes the following version options in Data Chord:
 
-### Loading Additional Schemas
+<p align="center">
+  <img src="images/data_chord_current_gc_versions.png" alt="Data Chord General Commons version selector" width="55%">
+</p>
 
-Our platform is data model agnostic and can ingest virtually any well‑structured CDE collection. To request an import of your own CDEs and schema please reivew the [submission checklist and instructions](requesting-data-be-added.md).
+Version `11.0.4` includes the completed permissible value updates for the previously noted high-impact CDE groups, including therapeutic agents, diagnoses, morphology, and anatomical-site fields.
 
+### Data model details
 
-### Changelog
-* 2026-02-18 - Updated to descibe Schemas/Data Models available in Data Chord
-* 2025‑07‑08 – Initial draft of CDE and Schema overview
+| Data model label in Data Chord | Current version information shown in Data Chord | Source |
+| ------------------------------ | ----------------------------------------------- | ------ |
+| General Commons Data Model     | `11.0.4`, `6.0.5`; version `11.0.4` includes completed PV updates | [NCI General Commons](https://github.com/CBIIT/cds-model/blob/main/model-desc/cds-model-props.yml) |
+| CCDI Data Model                | Selectable in Data Chord                        | [NCI Childhood Cancer Data Initiative](https://github.com/CBIIT/ccdi-model/blob/main/model-desc/ccdi-model-props.yml) |
+| Sage ChIPSeq Template Schema   | Selectable in Data Chord                        | [Sage Bionetworks / NF-OSI metadata dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
+| Sage Clinical Assay Template Schema | Selectable in Data Chord                    | [Sage Bionetworks / NF-OSI metadata dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
+| Sage Imaging Assay Template Schema  | Selectable in Data Chord                    | [Sage Bionetworks / NF-OSI metadata dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
+| Sage RNASeq Template Schema    | Selectable in Data Chord                        | [Sage Bionetworks / NF-OSI metadata dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
+| Synapse Schema                 | Selectable in Data Chord                        | [Sage Bionetworks / NF-OSI metadata dictionary](https://github.com/nf-osi/nf-metadata-dictionary) |
+
+## Loading Additional Data Models
+
+Our platform is data model agnostic and can ingest virtually any well-structured CDE collection. To request an import of your own CDEs and data model, please review the [submission checklist and instructions](requesting-data-be-added.md).
+
+## Accessing Data Chord
+
+The hosted early-access Data Chord web application is available here:
+
+[https://netrias-data-chord.netriasbdf.cloud/stage-1](https://netrias-data-chord.netriasbdf.cloud/stage-1)
+
+To request access, email [bdf_strides@netrias.com](mailto:bdf_strides@netrias.com) with the email address you would like to use for authentication. Verification emails may land in spam or junk folders, so please look for messages from `no-reply@verificationemail.com`.
+
+## Programmatic Access with the Netrias Client
+
+For Python-based workflows, use the **[Netrias Client](https://github.com/netrias/netrias_client)**. The client provides programmatic access to discovery, harmonization, and data model store services, including listing available data models, CDEs, and permissible values.
+
+The detailed installation and usage documentation lives in the Netrias Client repository so that client-specific examples stay aligned with the latest release. API keys are required for Netrias Client usage; see the [API key request guide](requesting-API-key.md).
+
+## Changelog
+
+- 2026-06-01 – Added Netrias Client reference for programmatic data model, CDE, and permissible value access.
+- 2026-06-01 – Updated General Commons `11.0.4` notes to reflect completed permissible value updates.
+- 2026-06-01 – Standardized terminology around data models and updated screenshots for the hosted early-access Data Chord application.
+- 2026-06-01 – Updated Data Chord access instructions for the hosted early-access web application.
+- 2026-02-18 – Updated to describe data models available in Data Chord.
+- 2025-07-08 – Initial draft of CDE and data model overview.

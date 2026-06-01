@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://netrias.com">
-    <img src="docs/images/NETRIAS Logotype_Full Color RGB.png" height="150">
+    <img src="docs/images/NETRIAS%20Logotype_Full%20Color%20RGB.png" height="150" alt="Netrias logo">
   </a>
 </p>
 
@@ -8,152 +8,163 @@
 
 # Netrias Metadata Harmonization Tooling
 
-> **Turn messy biomedical metadata into clean, standards‑compliant records in just a few clicks.**
+> **Turn messy biomedical metadata into clean, standards-compliant records in just a few clicks.**
 
-![Python 3.13+](https://img.shields.io/badge/python-3.13%2B-blue) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Python 3.13+](https://img.shields.io/badge/python-3.13%2B-blue)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 </div>
 
 ## 📢 Latest Updates
 
+### Jun 1, 2026
+
+**Data Chord is now available as a hosted early-access web application.** Users no longer need to install and run Data Chord locally for the no-code harmonization workflow.
+
+- **Early-access web app:** [Open Data Chord](https://netrias-data-chord.netriasbdf.cloud/stage-1)
+- **Authentication:** To request access, email [bdf_strides@netrias.com](mailto:bdf_strides@netrias.com) and include the email address you would like to use for authentication.
+- **Verification emails:** After your email is added to the system, you should receive a verification email. These emails may land in spam or junk folders, so please look for messages from `no-reply@verificationemail.com`.
+- **API keys:** API keys are only needed for the [Netrias Client](https://github.com/netrias/netrias_client) or direct REST API access. Data Chord uses email-based authentication.
+- **Netrias Client:** Programmatic discovery, harmonization, and data model access are now available through the [Netrias Client](https://github.com/netrias/netrias_client).
+- **Expanded file support:** The system now supports CSV, TSV, and Excel (`.xlsx`) files.
+- **Updated UI:** The CDE recommendation step in the guided workflow has been updated to make it more intuitive and easier to navigate when working with a large number of input columns.
+- **Terminology:** This documentation now uses **data model** consistently as the generic term for the CDE collections available in Data Chord. Some official Data Chord labels still include the word “Schema” because that is part of the displayed data model name.
+- **CDE recommendation coverage:** Data Chord can now recommend all available CDEs, including high-cardinality CDEs with large permissible value (PV) lists. Manual CDE selection is still available, but it is no longer required because of PV-list size.
+- **General Commons updates:** General Commons Data Model version `11.0.4` now includes the completed permissible value updates for the previously noted CDEs.
+- **Performance improvements:** Large harmonization jobs should be more reliable. In rare cases, a very large job may still fail; if that happens, retrying with smaller batches remains the recommended workaround.
+
+> **Note:** Data Chord is still in active development, and the hosted link should be treated as an early-access environment.
+
 ### Feb 18, 2026
 
-The Netrias Harmonization platform has undergone a significant update. As of Feb 2026, we’re doing the first of several releases:
+The Netrias Harmonization platform underwent a significant update as part of the first of several planned releases:
 
-- **UI upgrade:** Our UI harmonization tool has been significantly upgraded and is now called **Data Chord** (🎶 it harmonizes your data 🎶).
-- **Python client:** Major improvements are underway, with a release planned for **March 2026**.
-- **API updates:** We’ve made major updates to the underlying API. As a result, API access is **restricted for now**, since most users will find the Python client easier to use.
+- **UI upgrade:** Our UI harmonization tool was significantly upgraded and renamed **Data Chord** (🎶 it harmonizes your data 🎶).
+- **Netrias Client:** The Python client is now available as the [Netrias Client](https://github.com/netrias/netrias_client).
+- **API updates:** We made major updates to the underlying API. API access is restricted for now, since most users will find Data Chord or the Netrias Client easier to use.
   - If you need API access, please reach out using the contact information on the **[API key request page](docs/requesting-API-key.md)**.
 
+## ℹ️ About
 
-## ℹ️ About 
-The Netrias Harmonization platform provides a user interface (Data Chord), a Python client, and REST endpoints for:
+The Netrias Harmonization platform provides a hosted user interface (Data Chord), the [Netrias Client](https://github.com/netrias/netrias_client), and REST endpoints for:
 
-* **CDE discovery** – automatically get recommendations for which Common Data Element (CDE) should apply to each column in your dataset. 
-* **Value harmonization** – map free‑text cell values to controlled vocabularies.
-* **End‑to‑end pipelines** – batch conform entire spreadsheets into standards conformance.
+- **CDE discovery** – automatically get recommendations for which Common Data Element (CDE) should apply to each column in your dataset.
+- **Value harmonization** – map free-text cell values to controlled vocabularies.
+- **End-to-end pipelines** – batch-conform entire spreadsheets into standards-compliant outputs.
 
 ---
 
 ## 📚 Documentation Tour
 
-Follow this sequence for a smooth on‑boarding. Each step links to a dedicated page with more information and examples.
+Follow this sequence for a smooth onboarding experience. Each step links to a dedicated page with more information and examples.
 
-| Step | Topic                     | File                                                                                    | Why read it first?                                              |
-| :--: | ------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-|   1  | **What We Harmonize**     | [`what-we-harmonize.md`](docs/what-we-harmonize.md)                                     | Learn the core concepts & data models (CDEs + Schemas).         |
-|   2  | **Request an API Key**    | [`requesting-API-key.md`](docs/requesting-API-key.md)                                   | Get your credentials to use the tooling.                       |
-|   3  | **Install Data Chord**    | [Data Chord Github Page](https://github.com/netrias/data_chord/tree/v1.0.0?tab=readme-ov-file#data-chord)                         | No-code user interface for guided harmonization.                 |
-|   4  | **Install the Python Client**    | *Coming March 2026*                                                              | Advanced usage to build end-to-end harmonization pipelines.     |
-|   5  | **Submit Your Own CDEs**  | [`requesting-data-be-added.md`](docs/requesting-data-be-added.md)                       | How to get your custom data loaded into the platform.           |
+| Step | Topic                         | File / Link                                                                 | Why read it first?                                     |
+| :--: | ----------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------ |
+|  1   | **What We Harmonize**         | [`what-we-harmonize.md`](docs/what-we-harmonize.md)                         | Learn the core concepts, CDEs, and supported data models. |
+|  2   | **Open Data Chord**           | [Hosted early-access Data Chord](https://netrias-data-chord.netriasbdf.cloud/stage-1) | Start the no-code guided harmonization workflow.       |
+|  3   | **Request Data Chord Access** | Email [bdf_strides@netrias.com](mailto:bdf_strides@netrias.com)             | Get your email added for hosted app authentication.    |
+|  4   | **Request an API Key**        | [`requesting-API-key.md`](docs/requesting-API-key.md)                       | Required only for Netrias Client or direct REST API access. |
+|  5   | **Use the Netrias Client**    | [Netrias Client GitHub repo](https://github.com/netrias/netrias_client)      | Programmatic discovery, harmonization, and data model access. |
+|  6   | **Submit Your Own CDEs**      | [`requesting-data-be-added.md`](docs/requesting-data-be-added.md)           | Learn how to get a custom data model loaded into the platform. |
+
 ---
 
-## 🚀 No Code Getting Started Steps
+## 🚀 No-Code Getting Started
 
-### 1 · Request an API key
+### 1 · Request Data Chord access
 
-See [`requesting-API-key.md`](requesting-API-key.md) and email the necessary info to us. Store the key in a password manager or other secure location.
+Email [bdf_strides@netrias.com](mailto:bdf_strides@netrias.com) and send the email address you would like to use for authentication.
 
-### 2 · Install Data Chord
+After your email is added to the system, you should receive a verification email. These emails may occasionally land in spam or junk folders, so please look for messages from `no-reply@verificationemail.com`.
 
-Visit the [Data Chord Github Repo](https://github.com/netrias/data_chord/tree/v1.0.0?tab=readme-ov-file#data-chord) and follow the First-Time Setup instructions.
+### 2 · Open the hosted Data Chord web app
 
-### 3 · Open Data Chord in your browser
+Open the early-access hosted Data Chord app:
 
-After you've run the application just open http://localhost:8000 in your browser and you should see the Data Chord upload screen.
+[https://netrias-data-chord.netriasbdf.cloud/stage-1](https://netrias-data-chord.netriasbdf.cloud/stage-1)
 
-### 4 · Upload your first CSV file
+### 3 · Select a data model
 
-Data Chord currently only supports CSV files so any spreadsheet will need to be converted to that format. 
+Data Chord currently offers the following data models in the hosted early-access application:
 
-### 5 · Follow the guided harmonization workflow
+<p align="center">
+  <img src="docs/images/data_chord_current_data_models.png" alt="Data Chord data model selector" width="450">
+</p>
 
-We've designed Data Chord to guide the user through harmonizing the columns of interest in their uploaded spreadsheet.
+For the **General Commons Data Model**, the current version selector includes `11.0.4` and `6.0.5`:
+
+<p align="center">
+  <img src="docs/images/data_chord_current_gc_versions.png" alt="Data Chord General Commons version selector" width="450">
+</p>
+
+General Commons version `11.0.4` includes the completed permissible value updates for the previously noted high-impact CDEs, including therapeutic agents, diagnoses, morphology, and anatomical-site fields.
+
+### 4 · Upload your first file
+
+Data Chord currently supports CSV, TSV, and Excel (`.xlsx`) files.
+
+### 5 · Follow the guided harmonization workflow
+
+Data Chord is designed to guide you through harmonizing the columns of interest in your uploaded spreadsheet.
+
+---
+
+## 🧑‍💻 Developer Resources
+
+The no-code workflow now uses the hosted Data Chord web application. General users no longer need to install or run Data Chord locally.
+
+For programmatic access, use the **[Netrias Client](https://github.com/netrias/netrias_client)**. The Netrias Client provides Python access to discovery, harmonization, and data model services. Its installation and usage documentation is maintained in the client repository.
+
+The local Data Chord GitHub repository is still available for development reference:
+
+- [Data Chord GitHub repo](https://github.com/netrias/data_chord/tree/v1.0.0?tab=readme-ov-file#data-chord)
+
+For Netrias Client or direct REST API access, see the **[API key request guide](docs/requesting-API-key.md)**.
+
+---
 
 ## ⚠️ Caveats / Known Limitations
 
-### 1) Some high-cardinality CDEs must be selected manually
-To keep the recommendation experience fast and reliable in early releases, the system **does not currently recommend certain CDEs with very large permissible value (PV) lists**. If your CSV has column(s) that map to one of the CDEs below, please **select it manually** in Data Chord.
+### 1) CDE recommendation coverage
 
-**General Commons (`gc`) — not recommended (manual selection required):**
-- `therapeutic_agents` (PV count: 4475)
-- `primary_diagnosis` (3378)
-- `morphology` (1152)
-- `site_of_resection_or_biopsy` (614)
-- `tissue_or_organ_of_origin` (614)
-- `sample_anatomic_site` (340)
-- `organ_or_tissue` (333)
-- `primary_site` (246)
-- `role_or_affiliation` (140)
+Data Chord can now recommend **all available CDEs**, including high-cardinality CDEs with large permissible value (PV) lists. There are currently **no PV-count-based restrictions** on which CDEs can be recommended.
 
-**Synapse (`synapse`) — not recommended: (manual selection required)**
-- `Institution` (325)
-- `Assay` (186)
-- `ProtocolAssay` (186)
-- `ModelSystemName` (154)
-- `FileFormat` (114)
-- `Platform` (113)
-
-**Synapse ChIP-Seq Template (`sage_chipseq_template`) — not recommended: (manual selection required)**
-- `assay` (188)
-- `fileFormat` (114)
-- `platform` (114)
-
-**Synapse Clinical Assay Template (`sage_clinical_assay_template`) — not recommended: (manual selection required)**
-- `assay` (188)
-- `fileFormat` (114)
-
-**Synapse Imaging Assay Template (`sage_imaging_assay_template`) — not recommended: (manual selection required)**
-- `assay` (188)
-- `fileFormat` (114)
-- `platform` (114)
-
-**Childhood Cancer Data Initiative (`ccdi`) — not recommended: (manual selection required)**
-- `treatment_agent` (4477)
-- `laboratory_test_name` (1055)
-- `adverse_event` (790)
-- `diagnosis` (540)
-- `anatomic_site` (359)
-- `alteration` (208)
-- `comorbidity` (143)
-- `relationship` (118)
+Manual CDE selection is still available when users already know the target CDE, but it is no longer required as a workaround for large PV lists.
 
 ---
 
-### 2) General Commons model quality may vary for specific CDEs (PV updates in progress)
-For **General Commons (`gc`)**, some LLM behavior may be less accurate for a subset of CDEs because the system is currently using **older PV versions**. Updates are in progress to align these CDEs with newer, authoritative sources:
+### 2) General Commons version `11.0.4` includes completed PV updates
 
-- `therapeutic_agents`  
-  - Planned update: all descendants under NCIt **Pharmacological Substance (C1909)** and **Drug or Chemical by Structure (C1913)**
-- `primary_diagnosis`  
-  - Planned update: all descendants under NCIt **Disease or Diagnosis (C2991)**
-- `morphology`  
-  - Planned update: **ICD-O-3**
-- `site_of_resection_or_biopsy`  
-  - Planned update: **Uberon ontology**
-- `tissue_or_organ_of_origin`  
-  - Planned update: **Uberon ontology**
-- `sample_anatomic_site`  
-  - Planned update: **Uberon ontology**
+The previously noted permissible value updates for the **General Commons Data Model** have been completed in version `11.0.4`. This includes the updated PV coverage for the high-impact CDE groups previously flagged for improvement, including therapeutic agents, diagnoses, morphology, and anatomical-site fields.
 
-If you encounter unexpected recommendations or value mappings in these areas, please open an issue (include the schema + column name + a few sample values) so we can reproduce and prioritize fixes.
+If you are working with General Commons data, we recommend using version `11.0.4` whenever possible.
+
+If you encounter unexpected recommendations or value mappings, please open an issue and include the data model, version, column name, and a few sample values so we can reproduce and prioritize fixes.
 
 ---
 
-### 3) Early-release performance limits (large harmonization jobs)
-Data Chord is an early release and may become overloaded when harmonizing **many unique values at once**. In these cases you may see a **“harmonization job failed”** error after clicking **Harmonize**.
+### 3) Large harmonization jobs
+
+Data Chord has been improved to better handle large harmonization jobs, and users should generally no longer encounter failures when harmonizing many unique values.
+
+However, because Data Chord is still an early-access web application under active development, there is still a small chance that a very large job may fail. In these cases, you may see a **“harmonization job failed”** error after clicking **Harmonize**.
 
 If this happens:
-- Reduce the number of columns you harmonize at one time, **or**
-- Harmonize the highest-priority columns first, then continue in smaller batches
 
-This helps keep the job size manageable while we continue improving throughput and reliability.
+- Retry the harmonization job, or
+- Reduce the number of columns you harmonize at one time and continue in smaller batches
+
+Please open an issue if the problem persists so we can investigate the input size and failure mode.
 
 ---
 
 ## 🤔 Questions or Suggestions
 
-We encourage users to open github issues in this repo https://github.com/netrias/bdf_harmonization/issues with any questions, bugs, or feature requests they may have. Our goal is to work closely with users and build tooling that helps them harmonize metadata faster, more efficiently, and more accurately.
+Please open a GitHub issue in this repo with any questions, bugs, or feature requests:
+
+- [Open an issue](https://github.com/netrias/bdf_harmonization/issues)
+
+Our goal is to work closely with users and build tooling that helps them harmonize metadata faster, more efficiently, and more accurately.
 
 ---
 
@@ -165,10 +176,10 @@ Generously supported by ARPA-H via funding from the [Biomedical Data Fabric (BDF
 
 ## 🤝 Contributing
 
-We gladly accept pull requests that improve docs, examples, or client code. Please open an issue first if you plan a large change.
+We gladly accept pull requests that improve docs or examples in this repo. For Netrias Client changes, please use the [Netrias Client repo](https://github.com/netrias/netrias_client). Please open an issue first if you plan a large change.
 
 ---
 
 ## 📜 License
 
-© 2026 Netrias LLC - Released under the Apache 2.0 license.
+© 2026 Netrias LLC — Released under the Apache 2.0 license.
