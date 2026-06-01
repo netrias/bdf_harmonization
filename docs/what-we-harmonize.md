@@ -82,6 +82,15 @@ The **General Commons Data Model** currently includes the following version opti
 
 Version `11.0.4` includes the completed permissible value updates for the previously noted high-impact CDE groups, including therapeutic agents, diagnoses, morphology, and anatomical-site fields.
 
+### Data Model Versioning
+
+Data model versions in Data Chord and the Netrias Client are intended to follow the version labels used by the original upstream source data model whenever possible.
+
+For example, General Commons data model versions such as `11.0.4` and `6.0.5` correspond to the external CDS model versions maintained by CBIIT. This makes it easier to understand which upstream data model release is being used and to align Data Chord or Netrias Client outputs with the original source model.
+
+For General Commons, the upstream source model is available here: [CBIIT CDS model](https://github.com/CBIIT/cds-model/blob/main/model-desc).
+
+
 ### Data model details
 
 | Data model label in Data Chord | Current version information shown in Data Chord | Source |

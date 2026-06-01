@@ -28,6 +28,7 @@
 - **Netrias Client:** Programmatic discovery, harmonization, and data model access are now available through the [Netrias Client](https://github.com/netrias/netrias_client).
 - **Expanded file support:** The system now supports CSV, TSV, and Excel (`.xlsx`) files.
 - **Updated UI:** The CDE recommendation step in the guided workflow has been updated to make it more intuitive and easier to navigate when working with a large number of input columns.
+* **Upstream-aligned versioning:** Data model version numbers now follow the version labels used by the original upstream source models whenever possible. For example, General Commons versions such as `11.0.4` and `6.0.5` align with the corresponding CDS model versions from the CBIIT `cds-model` repository, making it easier to track Data Chord and Netrias Client selections with the source data model release.
 - **Terminology:** This documentation now uses **data model** consistently as the generic term for the CDE collections available in Data Chord. Some official Data Chord labels still include the word “Schema” because that is part of the displayed data model name.
 - **CDE recommendation coverage:** Data Chord can now recommend all available CDEs, including high-cardinality CDEs with large permissible value (PV) lists. Manual CDE selection is still available, but it is no longer required because of PV-list size.
 - **General Commons updates:** General Commons Data Model version `11.0.4` now includes the completed permissible value updates for the previously noted CDEs.
