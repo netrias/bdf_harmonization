@@ -1,0 +1,8 @@
+- [ ] Refine sales/lead generation process to develop and qualify leads.
+- [ ] Refine and execute the developed sales/lead generation process. Augment with existing contacts e.g., known or in-network, or connections that could provide contacts.
+- [ ] Refine costs in time and effort to acquire new customers once leads are generated. Accelerating pilot processes or increasing customer retention by minimizing blocking steps or asks. 
+- [ ] Given refined COGs and CAC, help build a budget that can support additional growth.
+- [ ] Identify the best route for financing the growth (VCs, Private Equity, Sales, …)
+- [ ] Research and develop a list of key competitors that have similar technology or value propositions. Augment existing competitor list. 
+- [ ] Investigate competitor technologies and value propositions. Compare/contrast.
+- [ ] Investigate the features and functionality that customers of the above competitors are using. Why do they find them valuable? How do customers use them?
