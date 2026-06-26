@@ -45,9 +45,19 @@ The Netrias Harmonization platform underwent a significant update as part of the
 - **API updates:** We made major updates to the underlying API. API access is restricted for now, since most users will find Data Chord or the Netrias Client easier to use.
   - If you need API access, please reach out using the contact information on the **[API key request page](docs/requesting-API-key.md)**.
 
-## ℹ️ About
+---
 
-The Netrias Harmonization platform provides a hosted user interface (Data Chord), the [Netrias Client](https://github.com/netrias/netrias_client), and REST endpoints for:
+## Purpose
+
+**Problem:**
+
+Research datasets use inconsistent terminology — a diagnosis might appear as "melanoma," "malignant melanoma," "MM," or "melanoma, primary" depending on the source. This makes data aggregation and analysis difficult.
+
+Manual curation is accurate but slow. Automated normalization is fast but opaque, with errors that need expert review anyway. Data Chord combines both: ML suggests standardized values with confidence scores, and curators focus their expertise on low-confidence suggestions while automation handles routine mappings.
+
+**Solution:**
+
+The Netrias Harmonization platform provides a hosted user interface (Data Chord), the [Netrias Client](https://github.com/netrias/netrias_client), and REST endpoints to solve this problem through the following key functions:
 
 - **CDE discovery** – automatically get recommendations for which Common Data Element (CDE) should apply to each column in your dataset.
 - **Value harmonization** – map free-text cell values to controlled vocabularies.
@@ -181,12 +191,6 @@ Please open a GitHub issue in this repo with any questions, bugs, or feature req
 - [Open an issue](https://github.com/netrias/bdf_harmonization/issues)
 
 Our goal is to work closely with users and build tooling that helps them harmonize metadata faster, more efficiently, and more accurately.
-
----
-
-## 💰 Funding
-
-Generously supported by ARPA-H via funding from the [Biomedical Data Fabric (BDF) Toolbox](https://arpa-h.gov/explore-funding/programs/arpa-h-bdf-toolbox) program.
 
 ---
 
