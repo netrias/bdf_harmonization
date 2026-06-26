@@ -194,12 +194,6 @@ Our goal is to work closely with users and build tooling that helps them harmoni
 
 ---
 
-## 💰 Funding
-
-Generously supported by ARPA-H via funding from the [Biomedical Data Fabric (BDF) Toolbox](https://arpa-h.gov/explore-funding/programs/arpa-h-bdf-toolbox) program.
-
----
-
 ## 🤝 Contributing
 
 We gladly accept pull requests that improve docs or examples in this repo. For Netrias Client changes, please use the [Netrias Client repo](https://github.com/netrias/netrias_client). Please open an issue first if you plan a large change.

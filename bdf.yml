@@ -13,7 +13,6 @@ llm:
   usesLlm: true
   modelsSupported:
     - gpt2
-    - gpt-5-mini
   modelsRequired:
     - gpt2
   bringOwnKey: false
