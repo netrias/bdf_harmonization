@@ -10,7 +10,7 @@
 
 > **Turn messy biomedical metadata into clean, standards-compliant records in just a few clicks.**
 
-![Python 3.13+](https://img.shields.io/badge/python-3.13%2B-blue)
+![python>=3.13](https://img.shields.io/badge/python-3.13%2B-blue)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 </div>
@@ -110,7 +110,18 @@ Data Chord is designed to guide you through harmonizing the columns of interest 
 
 ---
 
-## 🧑‍💻 Developer Resources
+## Architecture Diagram
+
+<p align="center">
+    <img src="docs/images/BDF_Architecture_Diagram.png">
+</p>
+
+
+---
+
+## 🧑‍💻 Developer Resources 
+
+### Data Chord
 
 The no-code workflow now uses the hosted Data Chord web application. General users no longer need to install or run Data Chord locally.
 
@@ -120,7 +131,11 @@ The local Data Chord GitHub repository is still available for development refere
 
 - [Data Chord GitHub repo](https://github.com/netrias/data_chord/tree/v1.0.0?tab=readme-ov-file#data-chord)
 
-For Netrias Client or direct REST API access, see the **[API key request guide](docs/requesting-API-key.md)**.
+---
+
+### Netrias Client & REST-API
+
+We provide REST API access through Netrias Client, see the **[API key request guide/documentation](docs/requesting-API-key.md)**.
 
 ---
 

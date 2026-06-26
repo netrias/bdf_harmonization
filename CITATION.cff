@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: Data Chord
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Christopher
+    family-names: Harman
+  - given-names: Patrick
+    family-names: Boutet
+url: 'https://netrias-data-chord.netriasbdf.cloud/'
+abstract: >-
+  The Netrias Harmonization platform provides a hosted user
+  interface (Data Chord) for:
+
+
+  CDE discovery – automatically get recommendations for
+  which Common Data Element (CDE) should apply to each
+  column in your dataset.
+
+  Value harmonization – map free-text cell values to
+  controlled vocabularies.
+
+  End-to-end pipelines – batch-conform entire spreadsheets
+  into standards-compliant outputs.
+keywords:
+  - data-harmonization
+  - bdf
+license: Apache-2.0
