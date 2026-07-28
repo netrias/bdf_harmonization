@@ -143,9 +143,9 @@ The local Data Chord GitHub repository is still available for development refere
 
 ---
 
-### Netrias Client & REST-API
+### Netrias Client API
 
-We provide REST API access through Netrias Client, see the **[API key request guide/documentation](docs/requesting-API-key.md)**.
+We provide programmatic access through the Netrias Client, see the **[API key request guide](docs/requesting-API-key.md)**.
 
 ---
 
