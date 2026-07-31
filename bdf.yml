@@ -7,7 +7,7 @@ tool:
   tool_homepage: https://github.com/netrias/bdf_harmonization
   documentation_url: https://github.com/netrias/bdf_harmonization
   tool_type: DesktopApp
-  tool_notes: Also offers API
+  tool_notes: Also offers a Python SDK
 
 llm:
   usesLlm: true
