@@ -24,7 +24,7 @@
 - **Early-access web app:** [Open Data Chord](https://netrias-data-chord.netriasbdf.cloud/stage-1)
 - **Authentication:** To request access, email [bdf_strides@netrias.com](mailto:bdf_strides@netrias.com) and include the email address you would like to use for authentication.
 - **Verification emails:** After your email is added to the system, you should receive a verification email. These emails may land in spam or junk folders, so please look for messages from `no-reply@verificationemail.com`.
-- **API keys:** API keys are only needed for the [Netrias Client](https://github.com/netrias/netrias_client) or direct REST API access. Data Chord uses email-based authentication.
+- **API keys:** API keys are only needed for the [Netrias Client](https://github.com/netrias/netrias_client). Data Chord uses email-based authentication.
 - **Netrias Client:** Programmatic discovery, harmonization, and data model access are now available through the [Netrias Client](https://github.com/netrias/netrias_client).
 - **Expanded file support:** The system now supports CSV, TSV, and Excel (`.xlsx`) files.
 - **Updated UI:** The CDE recommendation step in the guided workflow has been updated to make it more intuitive and easier to navigate when working with a large number of input columns.
@@ -74,7 +74,7 @@ Follow this sequence for a smooth onboarding experience. Each step links to a de
 |  1   | **What We Harmonize**         | [`what-we-harmonize.md`](docs/what-we-harmonize.md)                         | Learn the core concepts, CDEs, and supported data models. |
 |  2   | **Open Data Chord**           | [Hosted early-access Data Chord](https://netrias-data-chord.netriasbdf.cloud/stage-1) | Start the no-code guided harmonization workflow.       |
 |  3   | **Request Data Chord Access** | Email [bdf_strides@netrias.com](mailto:bdf_strides@netrias.com)             | Get your email added for hosted app authentication.    |
-|  4   | **Request an API Key**        | [`requesting-API-key.md`](docs/requesting-API-key.md)                       | Required only for Netrias Client or direct REST API access. |
+|  4   | **Request an API Key**        | [`requesting-API-key.md`](docs/requesting-API-key.md)                       | Required only for Netrias Client. |
 |  5   | **Use the Netrias Client**    | [Netrias Client GitHub repo](https://github.com/netrias/netrias_client)      | Programmatic discovery, harmonization, and data model access. |
 |  6   | **Submit Your Own CDEs**      | [`requesting-data-be-added.md`](docs/requesting-data-be-added.md)           | Learn how to get a custom data model loaded into the platform. |
 
