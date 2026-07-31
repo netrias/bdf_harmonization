@@ -5,13 +5,13 @@
 ### Jun 1, 2026
 
 - **Data Chord no longer requires an API key.** The hosted early-access Data Chord web application uses email-based authentication.
-- API keys are only required for the **[Netrias Client](https://github.com/netrias/netrias_client)** or **direct REST API access**.
+- API keys are only required for the **[Netrias Client](https://github.com/netrias/netrias_client)**.
 - To request access to the hosted Data Chord web app, email [bdf_strides@netrias.com](mailto:bdf_strides@netrias.com) and include the email address you would like to use for authentication.
 - Verification emails may land in spam or junk folders. Look for messages from `no-reply@verificationemail.com`.
 
 ### Feb 18, 2026
 
-- Due to major system updates, all API keys provisioned prior to Feb 18, 2026 have been deprecated. Users who need Netrias Client or direct REST API access should request a new key.
+- Due to major system updates, all API keys provisioned prior to Feb 18, 2026 have been deprecated. Users who need Netrias Client access should request a new key.
 
 ## Overview
 
@@ -20,7 +20,6 @@ This guide explains how to request an API key for the Netrias Harmonization plat
 API keys are required for:
 
 - Netrias Client access
-- Direct REST API access
 
 API keys are **not** required for the hosted Data Chord web application. Data Chord uses email-based authentication instead.
 
@@ -81,6 +80,6 @@ Once your email is added to the system, you should receive a verification email.
 ## Changelog
 
 - 2026-06-01 – Added Netrias Client link and clarified that API keys are required for Netrias Client usage.
-- 2026-06-01 – Clarified that hosted Data Chord uses email-based authentication and that API keys are only needed for the Netrias Client or direct REST API access.
+- 2026-06-01 – Clarified that hosted Data Chord uses email-based authentication and that API keys are only needed for the Netrias Client.
 - 2026-02-18 – Updated with deprecation announcement.
 - 2025-07-08 – Initial draft of API Key Provisioning Guide.
